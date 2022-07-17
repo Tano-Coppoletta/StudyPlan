@@ -1,0 +1,25 @@
+@host = localhost
+@port = 3001
+@APIURL = http://{{host}}:{{port}}/api
+
+### GET all the courses
+GET {{APIURL}}/courses
+
+### GET User
+GET {{APIURL}}/sessions/current
+
+### DELETE current session
+DELETE {{APIURL}}/session/current
+
+### POST create session (login)
+POST {{APIURL}}/sessions HTTP/1.1
+Content-Type: application/json
+
+{
+    "email" : "name@name.it",
+    "password" : "password"
+}
+
+###
+DELETE {{APIURL}}/studyPlan HTTP/1.1
+Content-Type: application/json
